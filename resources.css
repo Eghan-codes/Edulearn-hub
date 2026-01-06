@@ -1,0 +1,462 @@
+      /* ==================== GLOBAL STYLES ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        
+        /* ==================== MOBILE-FIRST BASE STYLES ==================== */
+        
+        /* ==================== HEADER SECTION (MOBILE) ==================== */
+        header {
+            background-color: #2563eb;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .hamburger {
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        
+        nav ul.active {
+            display: flex;
+        }
+        
+        nav ul li {
+            width: 100%;
+            padding: 0.5rem 0;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            padding: 0.5rem;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        nav a.active {
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+        }
+        
+        /* ==================== PAGE HEADER (MOBILE) ==================== */
+        .page-header {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-header p {
+            font-size: 1rem;
+        }
+        
+        /* ==================== MAIN CONTENT AREA (MOBILE) ==================== */
+        main {
+            padding: 2rem 0;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+        
+        /* ==================== STUDY MATERIALS SECTION (MOBILE) ==================== */
+        .materials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Individual material card */
+        .material-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .material-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        
+        /* Material icon area at top of card */
+        .material-icon {
+            background-color: #dbeafe;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+        
+        /* Material information section */
+        .material-info {
+            padding: 1.5rem;
+        }
+        
+        .material-info h3 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+        
+        .material-info p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Download button for materials */
+        .download-button {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .download-button:hover {
+            background-color: #1e40af;
+        }
+        
+        /* ==================== LEARNING TIPS SECTION ==================== */
+        .tips-section {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+        
+        /* List of tips with custom styling */
+        .tips-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        /* Individual tip item */
+        .tip-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background-color: #f9fafb;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+        }
+        
+        /* Tip number icon */
+        .tip-number {
+            background-color: #2563eb;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        /* Tip content area */
+        .tip-content h3 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tip-content p {
+            color: #666;
+        }
+        
+        /* ==================== VIDEO TUTORIALS SECTION ==================== */
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        /* Individual video card */
+        .video-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Video thumbnail placeholder */
+        .video-thumbnail {
+            background-color: #dbeafe;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+        }
+        
+        /* Play button overlay */
+        .play-button {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: rgba(37, 99, 235, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .play-button:hover {
+            transform: scale(1.1);
+            background-color: rgba(37, 99, 235, 1);
+        }
+        
+        /* Video information section */
+        .video-info {
+            padding: 1.5rem;
+        }
+        
+        .video-info h3 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+        
+        .video-info p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .video-duration {
+            color: #2563eb;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        
+        /* ==================== FOOTER SECTION ==================== */
+        footer {
+            background-color: #1e293b;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links {
+            margin-top: 1rem;
+        }
+        
+        .footer-links a {
+            color: #93c5fd;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        /* ==================== MEDIA QUERIES FOR LARGER SCREENS ==================== */
+        
+        /* Tablets and above (768px and up) */
+        @media (min-width: 768px) {
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            .hamburger {
+                display: none;
+            }
+            
+            nav ul {
+                display: flex !important;
+                flex-direction: row;
+                width: auto;
+                gap: 2rem;
+                padding: 0;
+            }
+            
+            nav ul li {
+                width: auto;
+                padding: 0;
+            }
+            
+            nav a:hover {
+                color: #dbeafe;
+                background-color: transparent;
+            }
+            
+            .page-header {
+                padding: 2.5rem 0;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            /* Materials grid - 2 columns on tablets */
+            .materials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .tips-section {
+                padding: 2rem;
+            }
+            
+            .tip-item {
+                padding: 1.2rem;
+            }
+            
+            .tip-number {
+                width: 38px;
+                height: 38px;
+            }
+            
+            /* Videos grid - 2 columns on tablets */
+            .videos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Desktop and above (1024px and up) */
+        @media (min-width: 1024px) {
+            .page-header {
+                padding: 3rem 0;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .page-header p {
+                font-size: 1.1rem;
+            }
+            
+            main {
+                padding: 3rem 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            /* Materials grid - 3 columns on desktop */
+            .materials-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+                margin-bottom: 3rem;
+            }
+            
+            .tips-section {
+                padding: 2.5rem;
+                margin-bottom: 3rem;
+            }
+            
+            .tips-list {
+                gap: 1.5rem;
+                margin-top: 1.5rem;
+            }
+            
+            .tip-item {
+                padding: 1.5rem;
+            }
+            
+            .tip-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .tip-content h3 {
+                font-size: 1.2rem;
+            }
+            
+            .tip-content p {
+                font-size: 1rem;
+            }
+            
+            .videos-grid {
+                gap: 2rem;
+            }
+        }

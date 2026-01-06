@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn Hub - Online Learning Platform</title>
+    
+    <style>
+        /* ==================== GLOBAL STYLES ==================== */
+        /* Reset default browser margins and paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Body styling - sets default font and background */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        
+        /* ==================== HEADER SECTION ==================== */
+        /* Header contains logo and navigation menu */
+        header {
+            background-color: #2563eb;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Container to center content and add padding */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation bar layout - flexbox for alignment */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Logo styling */
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        /* Navigation menu - horizontal list */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        /* Navigation links styling */
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        /* Hover effect for navigation links */
+        nav a:hover {
+            color: #dbeafe;
+        }
+        
+        /* Active page indicator */
+        nav a.active {
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+        }
+        
+        /* ==================== HERO SECTION ==================== */
+        /* Large banner section at top of homepage */
+        .hero {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Call-to-action button styling */
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: #2563eb;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        /* Button hover effect - slight lift */
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        /* ==================== FEATURES SECTION ==================== */
+        /* Section showing platform benefits */
+        .features {
+            padding: 3rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #2563eb;
+        }
+        
+        /* Grid layout for feature cards - 3 columns */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        /* Individual feature card */
+        .feature-card {
+            background-color: #f9fafb;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        /* Card hover effect */
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Icon placeholder in feature cards */
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #2563eb;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: #1e40af;
+        }
+        
+        /* ==================== COURSES PREVIEW SECTION ==================== */
+        .courses-preview {
+            padding: 3rem 0;
+            background-color: #f4f4f4;
+        }
+        
+        /* Grid for course cards - 4 columns */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        /* Individual course card */
+        .course-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Course image placeholder */
+        .course-image {
+            background-color: #dbeafe;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #2563eb;
+        }
+        
+        /* Course information section */
+        .course-info {
+            padding: 1.5rem;
+        }
+        
+        .course-info h3 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+        
+        .course-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* ==================== FOOTER SECTION ==================== */
+        footer {
+            background-color: #1e293b;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer links styling */
+        .footer-links {
+            margin-top: 1rem;
+        }
+        
+        .footer-links a {
+            color: #93c5fd;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- ==================== HEADER WITH NAVIGATION ==================== -->
+    <header>
+        <div class="container">
+            <nav>
+                <!-- Website logo/brand name -->
+                <div class="logo">EduLearn Hub</div>
+                
+                <!-- Main navigation menu -->
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- ==================== HERO SECTION ==================== -->
+    <!-- Main banner with headline and call-to-action -->
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to EduLearn Hub</h1>
+            <p>Your Gateway to Quality Online Education</p>
+            <a href="courses.html" class="cta-button">Explore Courses</a>
+        </div>
+    </section>
+    
+    <!-- ==================== FEATURES SECTION ==================== -->
+    <!-- Highlights the platform's key benefits -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose EduLearn Hub?</h2>
+            
+            <!-- Grid of three feature cards -->
+            <div class="features-grid">
+                <!-- Feature 1: Expert Instructors -->
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍🏫</div>
+                    <h3>Expert Instructors</h3>
+                    <p>Learn from industry professionals with years of experience in their fields.</p>
+                </div>
+                
+                <!-- Feature 2: Flexible Learning -->
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Flexible Learning</h3>
+                    <p>Study at your own pace, anytime and anywhere that suits you best.</p>
+                </div>
+                
+                <!-- Feature 3: Certificates -->
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Certificates</h3>
+                    <p>Earn recognized certificates upon successful completion of courses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== FEATURED COURSES SECTION ==================== -->
+    <!-- Preview of popular courses -->
+    <section class="courses-preview">
+        <div class="container">
+            <h2 class="section-title">Featured Courses</h2>
+            
+            <!-- Grid of four course cards -->
+            <div class="courses-grid">
+                <!-- Course 1: Web Development -->
+                <div class="course-card">
+                    <div class="course-image">💻</div>
+                    <div class="course-info">
+                        <h3>Web Development</h3>
+                        <p>Master HTML, CSS, and JavaScript fundamentals</p>
+                    </div>
+                </div>
+                
+                <!-- Course 2: Business Management -->
+                <div class="course-card">
+                    <div class="course-image">📊</div>
+                    <div class="course-info">
+                        <h3>Business Management</h3>
+                        <p>Essential skills for modern business leaders</p>
+                    </div>
+                </div>
+                
+                <!-- Course 3: Graphic Design -->
+                <div class="course-card">
+                    <div class="course-image">🎨</div>
+                    <div class="course-info">
+                        <h3>Graphic Design</h3>
+                        <p>Creative design principles and techniques</p>
+                    </div>
+                </div>
+                
+                <!-- Course 4: Language Learning -->
+                <div class="course-card">
+                    <div class="course-image">🗣️</div>
+                    <div class="course-info">
+                        <h3>English Language</h3>
+                        <p>Improve your communication skills</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== FOOTER ==================== -->
+    <!-- Footer with copyright and quick links -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 EduLearn Hub. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

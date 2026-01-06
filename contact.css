@@ -1,0 +1,467 @@
+        /* ==================== GLOBAL STYLES ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        
+        /* ==================== MOBILE-FIRST BASE STYLES ==================== */
+        
+        /* ==================== HEADER SECTION (MOBILE) ==================== */
+        header {
+            background-color: #2563eb;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .hamburger {
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        
+        nav ul.active {
+            display: flex;
+        }
+        
+        nav ul li {
+            width: 100%;
+            padding: 0.5rem 0;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            padding: 0.5rem;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        nav a.active {
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+        }
+        
+        /* ==================== PAGE HEADER (MOBILE) ==================== */
+        .page-header {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-header p {
+            font-size: 1rem;
+        }
+        
+        /* ==================== MAIN CONTENT AREA (MOBILE) ==================== */
+        main {
+            padding: 2rem 0;
+        }
+        
+        /* Single column layout on mobile */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        /* ==================== CONTACT FORM SECTION (MOBILE) ==================== */
+        .contact-form {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+        
+        /* Form group - contains label and input */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        /* Label styling */
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #1e40af;
+            font-weight: 500;
+        }
+        
+        /* Input and textarea styling */
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        /* Focus state for inputs */
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+        
+        /* Textarea specific styling */
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* Submit button styling */
+        .submit-button {
+            background-color: #2563eb;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .submit-button:hover {
+            background-color: #1e40af;
+            transform: translateY(-2px);
+        }
+        
+        /* ==================== CONTACT INFO SECTION (MOBILE) ==================== */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        /* Info box styling */
+        .info-box {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .info-box h3 {
+            color: #1e40af;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Individual info item */
+        .info-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        /* Icon for info items */
+        .info-icon {
+            font-size: 1.5rem;
+            color: #2563eb;
+            flex-shrink: 0;
+        }
+        
+        /* Info text content */
+        .info-text {
+            flex-grow: 1;
+        }
+        
+        .info-text strong {
+            color: #1e40af;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        
+        .info-text p {
+            color: #666;
+            margin: 0;
+        }
+        
+        /* ==================== FAQ SECTION (MOBILE) ==================== */
+        .faq-section {
+            grid-column: 1;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 1.5rem;
+        }
+        
+        /* FAQ list */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        /* Individual FAQ item */
+        .faq-item {
+            padding: 1rem;
+            background-color: #f9fafb;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+        }
+        
+        .faq-item h3 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .faq-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* ==================== FOOTER SECTION ==================== */
+        footer {
+            background-color: #1e293b;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links {
+            margin-top: 1rem;
+        }
+        
+        .footer-links a {
+            color: #93c5fd;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        /* ==================== MEDIA QUERIES FOR LARGER SCREENS ==================== */
+        
+        /* Tablets and above (768px and up) */
+        @media (min-width: 768px) {
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            .hamburger {
+                display: none;
+            }
+            
+            nav ul {
+                display: flex !important;
+                flex-direction: row;
+                width: auto;
+                gap: 2rem;
+                padding: 0;
+            }
+            
+            nav ul li {
+                width: auto;
+                padding: 0;
+            }
+            
+            nav a:hover {
+                color: #dbeafe;
+                background-color: transparent;
+            }
+            
+            .page-header {
+                padding: 2.5rem 0;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            /* Two-column layout on tablets */
+            .contact-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 2.5rem;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+            
+            .form-group {
+                margin-bottom: 1.2rem;
+            }
+            
+            .info-box {
+                padding: 1.8rem;
+            }
+            
+            .info-box h3 {
+                font-size: 1.25rem;
+            }
+            
+            /* FAQ spans both columns on tablets and up */
+            .faq-section {
+                grid-column: 1 / -1;
+                padding: 2rem;
+                margin-top: 2rem;
+            }
+            
+            .faq-list {
+                gap: 1.2rem;
+            }
+            
+            .faq-item {
+                padding: 1.2rem;
+            }
+        }
+        
+        /* Desktop and above (1024px and up) */
+        @media (min-width: 1024px) {
+            .page-header {
+                padding: 3rem 0;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .page-header p {
+                font-size: 1.1rem;
+            }
+            
+            main {
+                padding: 3rem 0;
+            }
+            
+            .contact-container {
+                gap: 3rem;
+            }
+            
+            .contact-form {
+                padding: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .form-group {
+                margin-bottom: 1.5rem;
+            }
+            
+            .contact-info {
+                gap: 2rem;
+            }
+            
+            .info-box {
+                padding: 2rem;
+            }
+            
+            .info-box h3 {
+                font-size: 1.3rem;
+            }
+            
+            .faq-section {
+                padding: 2.5rem;
+            }
+            
+            .faq-list {
+                gap: 1.5rem;
+                margin-top: 1.5rem;
+            }
+            
+            .faq-item {
+                padding: 1.5rem;
+            }
+            
+            .faq-item h3 {
+                font-size: 1.1rem;
+            }
+            
+            .faq-item p {
+                font-size: 1rem;
+            }
+        }

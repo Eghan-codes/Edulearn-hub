@@ -1,0 +1,408 @@
+   /* ==================== GLOBAL STYLES ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        
+        /* ==================== MOBILE-FIRST BASE STYLES ==================== */
+        
+        /* ==================== HEADER SECTION (MOBILE) ==================== */
+        header {
+            background-color: #2563eb;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        /* Hamburger Menu Button */
+        .hamburger {
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+        
+        /* Navigation menu - hidden by default on mobile */
+        nav ul {
+            list-style: none;
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        
+        nav ul.active {
+            display: flex;
+        }
+        
+        nav ul li {
+            width: 100%;
+            padding: 0.5rem 0;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            padding: 0.5rem;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        nav a.active {
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+        }
+        
+        /* ==================== PAGE HEADER ==================== */
+        /* Banner for internal pages */
+        .page-header {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+        }
+        
+        /* ==================== MAIN CONTENT AREA ==================== */
+        main {
+            padding: 3rem 0;
+        }
+        
+        /* ==================== COURSE CATEGORIES SECTION ==================== */
+        .categories {
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: #2563eb;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Grid for category cards - 2 columns */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        /* Individual category card */
+        .category-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .category-card h3 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* ==================== ALL COURSES SECTION ==================== */
+        .all-courses {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        /* List of courses - each course is a row */
+        .course-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        /* Individual course item - horizontal layout */
+        .course-item {
+            display: flex;
+            background-color: #f9fafb;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .course-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Course thumbnail - smaller on mobile */
+        .course-thumbnail {
+            background-color: #dbeafe;
+            width: 80px;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+        
+        /* Course details on the right */
+        .course-details {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .course-details h3 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .course-details p {
+            color: #666;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Course metadata - stack on mobile */
+        .course-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        .course-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        /* Enroll button */
+        .enroll-button {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .enroll-button:hover {
+            background-color: #1e40af;
+        }
+        
+        /* ==================== FOOTER SECTION ==================== */
+        footer {
+            background-color: #1e293b;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links {
+            margin-top: 1rem;
+        }
+        
+        .footer-links a {
+            color: #93c5fd;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        /* ==================== MEDIA QUERIES FOR LARGER SCREENS ==================== */
+        
+        /* Tablets and above (768px and up) */
+        @media (min-width: 768px) {
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            .hamburger {
+                display: none;
+            }
+            
+            nav ul {
+                display: flex !important;
+                flex-direction: row;
+                width: auto;
+                gap: 2rem;
+                padding: 0;
+            }
+            
+            nav ul li {
+                width: auto;
+                padding: 0;
+            }
+            
+            nav a:hover {
+                color: #dbeafe;
+                background-color: transparent;
+            }
+            
+            .page-header {
+                padding: 2.5rem 0;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            /* Categories grid - 2 columns on tablets */
+            .categories-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.2rem;
+            }
+            
+            /* Course thumbnail larger on tablets */
+            .course-thumbnail {
+                width: 150px;
+                min-height: 120px;
+                font-size: 2.5rem;
+            }
+            
+            .course-details h3 {
+                font-size: 1.2rem;
+            }
+            
+            /* Course metadata - horizontal on tablets */
+            .course-meta {
+                flex-direction: row;
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Desktop and above (1024px and up) */
+        @media (min-width: 1024px) {
+            .page-header {
+                padding: 3rem 0;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .page-header p {
+                font-size: 1.1rem;
+            }
+            
+            main {
+                padding: 3rem 0;
+            }
+            
+            .categories {
+                margin-bottom: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            /* Categories grid - 4 columns on desktop */
+            .categories-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.5rem;
+                margin-bottom: 3rem;
+            }
+            
+            /* Course thumbnail full size on desktop */
+            .course-thumbnail {
+                width: 200px;
+                font-size: 3rem;
+            }
+            
+            .course-details h3 {
+                font-size: 1.3rem;
+            }
+            
+            .course-details p {
+                margin-bottom: 1rem;
+            }
+            
+            .course-meta {
+                gap: 2rem;
+            }
+        }
